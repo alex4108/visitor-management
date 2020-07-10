@@ -10,7 +10,7 @@
   "author": "Amit Shukla",
   "license": "MIT",
   "dependencies": {
-    "bcrypt": "3.0.1",
+    "bcrypt": "^5.0.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
@@ -18,5 +18,9 @@
     "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.4.8",
     "nodemon": "^1.18.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alex4108/visitor-management.git"
   }
 }

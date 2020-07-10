@@ -49,6 +49,10 @@
   "main": "index.js",
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "description": ""
+  "license": "MIT",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alex4108/visitor-management.git"
+  }
 }

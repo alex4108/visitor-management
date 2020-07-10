@@ -1,7 +1,2 @@
-FROM node:11
-RUN mkdir /usr/src/app
-WORKDIR /usr/src/app
-COPY . .
-RUN npm init -y
-RUN npm install --save nodemon cors express dotenv jsonwebtoken mongoose bcrypt@3.0.1 body-parser
+FROM alex4108/visitor-management:server-prod
 CMD ["node", "./node_modules/nodemon/bin/nodemon.js", "/usr/src/app/index.js"]
