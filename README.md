@@ -1,13 +1,8 @@
-# Visitor Management App 
-### Master Status
+# Visitor Management Webapp
 [![Build Status](https://travis-ci.com/alex4108/visitor-management.svg?branch=master)](https://travis-ci.com/alex4108/visitor-management?branch=master)
-
-### Develop Status
-[![Build Status](https://travis-ci.com/alex4108/visitor-management.svg?branch=develop)](https://travis-ci.com/alex4108/visitor-management?branch=develop)
 
 ## Credits
 Originally forked from: [https://github.com/AmitXShukla/Visitor-Management-App](AmitXShukla)
-
 
 # Building & Deploying
 
@@ -31,25 +26,18 @@ Feel free to setup the dependencies locally based on the `Dockerfile` in each di
 1. `docker-compose -f docker-compose-production.yml up`
 1. App available at http://localhost:8080
 
-## Improvements from original
+# About
+
+## Frontend
+* Node 12
+* Angular 9
+
+## Backend
+* Node 12
+* Express
+* MongoDB
+
+# Improvements since fork
 * Containerized deployment
-
-## TODO Improvements
-
-* RADIUS Provisioning
-
-When a guest is provisioned and checked in, they should be provisioned on the RADIUS server with an expiration time.  A scheduled task will delete users from the RADIUS server as appropriate.  Upon check in, the user will be presented with an option to print a "Welcome sheet" containing the user's RADIUS credentials.
-
-* Guest Checkin Notifications
-
-Checkin of a guest will trigger a notification to the host that their guest has arrived.
-
-* Guest Arrival Workflow
-
-Upon arrival of a guest, they should be able to "check in" on an app.  This "check in" will query the user for their name, email, company, and purpose of visit.  It will then ask the guest to select their host from a list.  This will then send a notification to the host, that their party has arrived.
-
-The host should be presented with a quicklink to provision RADIUS credentials for the user.
-
-
-## About
-This app uses an angular frontend and a nodejs backend.  The client runs nodejs 12 + angular 9. The server runs node 11.  The server requires a mongodb installation which is provisioned in the `docker-compose.yml`.
+* Bumped to node 12
+* Updated dependencies - fixed vulnerabilities
