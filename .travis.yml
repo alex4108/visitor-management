@@ -5,13 +5,12 @@ os: linux
 dist: bionic
 jobs:
   include:
-  - stage: compile
+  - stage: "Frontend"
     before_script:
     - npm install -g @angular/cli@9
-    script: npm install
-  - stage: test
-    script: ng build
-  - stage: deploy
+    script: 
+      - npm install
+      - ng build
     deploy:
       provider: releases
       token:
