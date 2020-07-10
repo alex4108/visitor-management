@@ -8,11 +8,11 @@ jobs:
   - stage: "Frontend"
     before_script:
     - ls
-    - cd visitor-management/Client
+    - cd Client
     - npm install -g @angular/cli@9
     - npm install
     script: 
-    - cd visitor-management/Client
+    - ls
     - ng build
     before_deploy:
     - tar czvf visitor-app-static-$TRAVIS_BUILD_NUMBER.tar.gz ./Client/dist/visitor-app/ 
