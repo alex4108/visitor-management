@@ -14,9 +14,8 @@ jobs:
     script: 
     - ls
     - ng build
-    - cd ../
     before_deploy:
-    - tar czvf visitor-app-html.tar.gz ./Client/dist/visitor-app/ 
+    - tar czvf visitor-app-html.tar.gz ./dist/visitor-app/ 
     - git config --local user.name "Alex Schittko"
     - git config --local user.email "alex4108@live.com"
     - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
@@ -30,4 +29,5 @@ jobs:
         repo: alex4108/visitor-management
         branch: master
       cleanup: 'false'
+      skip_cleanup: 'true'
   
