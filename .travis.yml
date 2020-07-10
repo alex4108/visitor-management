@@ -8,8 +8,7 @@ jobs:
   - stage: compile
     before_script:
     - npm install -g @angular/cli@9
-    install:
-    - npm install
+    script: npm install
   - stage: test
     script: ng build
   - stage: deploy
