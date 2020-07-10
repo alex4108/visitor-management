@@ -1,7 +1,9 @@
 # Visitor Management App 
-Master: [![Build Status](https://travis-ci.com/alex4108/visitor-management.svg?branch=master)](https://travis-ci.com/alex4108/visitor-management?branch=master)
+### Master Status
+[![Build Status](https://travis-ci.com/alex4108/visitor-management.svg?branch=master)](https://travis-ci.com/alex4108/visitor-management?branch=master)
 
-Develop: [![Build Status](https://travis-ci.com/alex4108/visitor-management.svg?branch=develop)](https://travis-ci.com/alex4108/visitor-management?branch=develop)
+### Develop Status
+[![Build Status](https://travis-ci.com/alex4108/visitor-management.svg?branch=develop)](https://travis-ci.com/alex4108/visitor-management?branch=develop)
 
 ## Credits
 Originally forked from: [https://github.com/AmitXShukla/Visitor-Management-App](AmitXShukla)
@@ -15,6 +17,8 @@ Originally forked from: [https://github.com/AmitXShukla/Visitor-Management-App](
 1. Double check the `allowedOrigins` parameter and tune as needed to make CORS work in your deployment.
 1. `docker-compose up`
 1. App available at http://localhost:4200
+
+* `docker-compose down && docker-compose build && docker-compose up` to build changes.
 
 ## Deployment (Production)
 1. Open up `docker-compose-production.yml`
