@@ -1,12 +1,14 @@
 version: '3.4'
 services:
   backend:
+    # image: alex4108/visitor-management:server-prod
     build:
       context: ./Server
+      dockerfile: production.Dockerfile
     environment:
       - PORT=3000
       - mongoDBURL=mongodb://mongodb:27017/visitor
-      - allowedOrigins=http://localhost:3000,http://localhost:4200 # comma delimited list
+      - allowedOrigins=http://localhost:8080,http://localhost:3000 # comma delimited list
       - JWT_SECRET=EsDdgQFct3B294nRepkAyHv5jWrNfUY7wMPJVG6L
     ports:
       - "3000:3000"
@@ -14,10 +16,12 @@ services:
       - mongodb
   
   frontend:
+    # image: alex4108/visitor-management:client-prod
     build:
       context: ./Client
+      dockerfile: production.Dockerfile
     ports:
-      - "4200:4200"
+      - "8080:80"
     depends_on:
       - mongodb
       - backend
