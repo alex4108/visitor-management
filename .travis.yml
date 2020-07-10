@@ -8,8 +8,8 @@ jobs:
   - stage: "Frontend"
     before_script:
     - npm install -g @angular/cli@9
+    - npm install
     script: 
-      - npm install
       - ng build
     deploy:
       provider: releases
