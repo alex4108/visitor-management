@@ -1,0 +1,28 @@
+version: '3.4'
+services:
+  backend:
+    build:
+      context: ./Server
+    environment:
+      - PORT=3000
+      - mongoDBURL=mongodb://mongodb:27017/visitor
+      - allowedOrigins=http://localhost:4200 # comma delimited list
+      - JWT_SECRET=EsDdgQFct3B294nRepkAyHv5jWrNfUY7wMPJVG6L
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+  
+  frontend:
+    build:
+      context: ./Client
+    ports:
+      - "4200:4200"
+    depends_on:
+      - mongodb
+      - backend
+
+  mongodb:
+    image: mongo
+    ports: 
+      - "27017:27017"

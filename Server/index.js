@@ -10,22 +10,21 @@ const valFunctions = require('./validators/validate');
 // ****** validation rules END ****** //
 
 // ****** allow cross-origin requests code START ****** //
-app.use(cors()); // uncomment this to enable all CORS and delete cors(corsOptions) in below code
+
+//app.use(cors()); // uncomment this to enable all CORS and delete cors(corsOptions) in below code
 const allowedOrigins = process.env.allowedOrigins.split(',');
-/**
 app.use(cors({
     origin: function (origin, callback) {
         // allow requests with no origin 
         // (like mobile apps or curl requests)
         if (!origin) return callback(null, true);
         if (allowedOrigins.indexOf(origin) === -1) {
-            var msg = 'The CORS policy for this site does not ' + 'allow access from the specified Origin.';
+            var msg = 'The CORS policy for this site does not ' + 'allow access from the specified Origin. ' + origin;
             return callback(new Error(msg), false);
         }
         return callback(null, true);
     }
 }));
- */
 // ****** allow cross-origin requests code END ****** //
 
 // app Routes
