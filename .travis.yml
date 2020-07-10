@@ -1,0 +1,30 @@
+language: node_js
+node_js:
+  - "10"
+dist: bionic
+sudo: false
+
+branches:
+  only:
+  - develop
+  - master
+  
+jobs:
+  include:
+    - stage: compile
+      before_script:
+        - npm install -g @angular/cli@9
+      install:
+        - npm install
+      script:
+        - ng build 
+    - stage: deploy
+      deploy:
+        provider: releases
+        api_key: 
+          secure: "LG1yrSgW1Kd1HYeicX8bcCiJWI6hCLMEwfiXN0LVzmMfQiccC/ffNgEJ+Vp2lXRLqkAszH7lmDIQlAHboSV1BKLLTFxewvph7J8u6la3ozL3KmwkwoP+v94a0s4xekE2E4sYogUUUxXjBJPcWYQQg/6da6OGqlsIlHjADDdm0b55411VeeEx8EIEsGNl9pkgBSMM/PyGt8DXI0SbmXhX4hlveZKr4+flaiM4BP512Ia1ZzkXD65cF5jwp4bNltg8a8r5Ar0mr3XKepAxwTmEB5+R1ik72myNLZRmPKtO6igYzSjkvPqVDHU4GoTkRAoL+W7Fo5W6PjiGjlMWbX76/KYoad/YRVqQceCLHYNUnQVNkol6Vg3ffrkSc0kAa75lM+l2LeJtuA3i89Y1E6gCjQkKSv/OXk2KI4qCU9iqdH4qTCYTuBK+5//gANDuCRbjcS2fYBNPHBAHC/ZWr1VY8F58fwAFTlf9CLj2njYlxzs2QhHXFEaX+uh4YLqTAEsolHEtGb2SwQMQ6d0ZsDJsB6aIkbk+L3fPEtVKiHTJsmP8BaWnkugb4A3zHqIIPnu6iaI/v8kIyiGrItvSQs36tNTAs5tfZyCsPCiEIJhncZDIXj2lIK80ZhjhI9S0deKNolum19hPbGIDNXPuxJtR5BXBc9iaDCg75OxEv9NfvSo="
+        skip_cleanup: true
+        keep-history: true
+        local_dir: dist/
+        on:
+          branch: master
