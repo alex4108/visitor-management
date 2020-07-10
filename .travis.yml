@@ -4,11 +4,6 @@ node_js:
 dist: bionic
 sudo: false
 
-branches:
-  only:
-  - develop
-  - master
-  
 jobs:
   include:
     - stage: compile
