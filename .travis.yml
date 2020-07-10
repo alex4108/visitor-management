@@ -1,8 +1,8 @@
 language: node_js
 node_js:
 - '10'
+os: linux
 dist: bionic
-sudo: false
 jobs:
   include:
   - stage: compile
@@ -10,6 +10,7 @@ jobs:
     - npm install -g @angular/cli@9
     install:
     - npm install
+  - stage: test
     script: ng build
   - stage: deploy
     deploy:
@@ -19,5 +20,6 @@ jobs:
       file: "./dist"
       on:
         repo: alex4108/visitor-management
+        branch: master
       skip_cleanup: 'true'
 
