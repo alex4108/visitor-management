@@ -7,6 +7,7 @@ jobs:
   include:
   - stage: "Frontend"
     before_script:
+    - ls
     - cd visitor-management/Client
     - npm install -g @angular/cli@9
     - npm install
