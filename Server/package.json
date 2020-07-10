@@ -18,5 +18,9 @@
     "jsonwebtoken": "^8.4.0",
     "mongoose": "^5.4.8",
     "nodemon": "^1.18.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/alex4108/visitor-management.git"
   }
 }
