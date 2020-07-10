@@ -1,4 +1,9 @@
 # Visitor Management App 
+### Master Status
+[![Build Status](https://travis-ci.com/alex4108/visitor-management.svg?branch=master)](https://travis-ci.com/alex4108/visitor-management?branch=master)
+
+### Develop Status
+[![Build Status](https://travis-ci.com/alex4108/visitor-management.svg?branch=develop)](https://travis-ci.com/alex4108/visitor-management?branch=develop)
 
 ## Credits
 Originally forked from: [https://github.com/AmitXShukla/Visitor-Management-App](AmitXShukla)
@@ -6,12 +11,20 @@ Originally forked from: [https://github.com/AmitXShukla/Visitor-Management-App](
 ## Requirements
 * Docker
 
-## Deployment
+## Deployment (Development)
 1. Open up `docker-compose.yml`
 1. Modify the `JWT_TOKEN` to a randomly generated value
 1. Double check the `allowedOrigins` parameter and tune as needed to make CORS work in your deployment.
 1. `docker-compose up`
 1. App available at http://localhost:4200
+
+* `docker-compose down && docker-compose build && docker-compose up` to build changes.
+
+## Deployment (Production)
+1. Open up `docker-compose-production.yml`
+1. See modifications to make above
+1. `docker-compose -f docker-compose-production.yml up`
+1. App available at http://localhost:8080
 
 ## Improvements from original
 * Containerized deployment
