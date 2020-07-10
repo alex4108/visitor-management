@@ -8,10 +8,15 @@
 ## Credits
 Originally forked from: [https://github.com/AmitXShukla/Visitor-Management-App](AmitXShukla)
 
+
+# Building & Deploying
+
 ## Requirements
 * Docker
 
-## Deployment (Development)
+Feel free to setup the dependencies locally based on the `Dockerfile` in each directory.
+
+## Development
 1. Open up `docker-compose.yml`
 1. Modify the `JWT_TOKEN` to a randomly generated value
 1. Double check the `allowedOrigins` parameter and tune as needed to make CORS work in your deployment.
@@ -20,7 +25,7 @@ Originally forked from: [https://github.com/AmitXShukla/Visitor-Management-App](
 
 * `docker-compose down && docker-compose build && docker-compose up` to build changes.
 
-## Deployment (Production)
+## Production
 1. Open up `docker-compose-production.yml`
 1. See modifications to make above
 1. `docker-compose -f docker-compose-production.yml up`
@@ -47,4 +52,4 @@ The host should be presented with a quicklink to provision RADIUS credentials fo
 
 
 ## About
-This app uses an angular frontend and a nodejs backend.  The client runs node 10 and the server runs node 11.  The server requires a mongodb installation which is provisioned in the `docker-compose.yml`.
+This app uses an angular frontend and a nodejs backend.  The client runs nodejs 12 + angular 9. The server runs node 11.  The server requires a mongodb installation which is provisioned in the `docker-compose.yml`.
