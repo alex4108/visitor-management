@@ -1,25 +1,23 @@
 language: node_js
 node_js:
-  - "10"
+- '10'
 dist: bionic
 sudo: false
-
 jobs:
   include:
-    - stage: compile
-      before_script:
-        - npm install -g @angular/cli@9
-      install:
-        - npm install
-      script:
-        - ng build 
-    - stage: deploy
-      deploy:
-        provider: releases
-        api_key: 
-          secure: "LG1yrSgW1Kd1HYeicX8bcCiJWI6hCLMEwfiXN0LVzmMfQiccC/ffNgEJ+Vp2lXRLqkAszH7lmDIQlAHboSV1BKLLTFxewvph7J8u6la3ozL3KmwkwoP+v94a0s4xekE2E4sYogUUUxXjBJPcWYQQg/6da6OGqlsIlHjADDdm0b55411VeeEx8EIEsGNl9pkgBSMM/PyGt8DXI0SbmXhX4hlveZKr4+flaiM4BP512Ia1ZzkXD65cF5jwp4bNltg8a8r5Ar0mr3XKepAxwTmEB5+R1ik72myNLZRmPKtO6igYzSjkvPqVDHU4GoTkRAoL+W7Fo5W6PjiGjlMWbX76/KYoad/YRVqQceCLHYNUnQVNkol6Vg3ffrkSc0kAa75lM+l2LeJtuA3i89Y1E6gCjQkKSv/OXk2KI4qCU9iqdH4qTCYTuBK+5//gANDuCRbjcS2fYBNPHBAHC/ZWr1VY8F58fwAFTlf9CLj2njYlxzs2QhHXFEaX+uh4YLqTAEsolHEtGb2SwQMQ6d0ZsDJsB6aIkbk+L3fPEtVKiHTJsmP8BaWnkugb4A3zHqIIPnu6iaI/v8kIyiGrItvSQs36tNTAs5tfZyCsPCiEIJhncZDIXj2lIK80ZhjhI9S0deKNolum19hPbGIDNXPuxJtR5BXBc9iaDCg75OxEv9NfvSo="
-        skip_cleanup: true
-        keep-history: true
-        local_dir: dist/
-        on:
-          branch: master
+  - stage: compile
+    before_script:
+    - npm install -g @angular/cli@9
+    install:
+    - npm install
+    script: ng build
+  - stage: deploy
+    deploy:
+      provider: releases
+      api_key:
+        secure: lNHkME+las3eL8GaTEy3uWcd0k8wtzc5q6m56tN4fYgaCS0Epxcux8TlNmhXm5dk7DSJtodM35Uml+dsWcCuu9pa2L4b0RcbbwkEKywIP2BBKgPaUz+9CkZkNP+JxFoUlFMwVQW2E8Uc1QDo/R1N4dQ3dF8Y6DWZbZFTGun/pAErmoYUsldx766ncMcWpwhBUD/CV2n9ZiCykdk4vs9a1NKUCrjmw+OwwdhJlUg/YrKVN34xut9P5ePWDPjuHl9geMqmlSgwgusPkFFmo4ArBdHziCcY3KZKs6Uw0oZ8qm+ECwjTna5EvG4g5SfVYbmT5zfptv3ulee+fKO39Qkn5AmeUsNPpmT8CGWxF6kybn+snWYIZLgr+NdMXratxyORia8RcOLvxYPUA9G9Za4aJJWBInUNshslHBpZv1skrZMi5wE9VYoLKuusa9PTzahkx2hzS1jf0QmbodGd0tJVtdI7sAXTlQzUzMt1BL7aX3CZp5YgNcfP3oQIfGZaru/HDdwXiNIX9dTOfBAvffdKzPOQjuU0NN1qKM+cFmw55Vo/VVVZSIxz0NMPPvfEke8gnmHxqPHEuNru+TPkP1/lSkNsMTVCG6EbNfmJfX5itN1R1d6N+gyZVmgx6FEaDTN9cRVCwZ0VctGMafstfdDpkvSmXH86SfCtfmIQOL0aTTg=
+      file: "./dist"
+      on:
+        repo: alex4108/visitor-management
+      skip_cleanup: 'true'
+
